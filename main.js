@@ -15,3 +15,29 @@ function toggleDetail(e){
 
 	$(detail).slideToggle()
 }
+
+//for validation form
+
+function onFormSubmit(e){
+	//untuk menghindari terjadinya OOD
+	e.preventDefault()
+
+	const email = $("#email")
+	const subject = $("#subject")
+	const message = $("#message")
+
+	// console.log($(subject).val())
+
+	if(!$(email).val()){
+		alert("Email is required")
+	} else if(!$(subject).val()){
+		alert("Subject is required")
+	} else if(!$(message).val()){
+		alert("Message is required")
+	} else{
+		alert("Form Submitted")
+		$(email).val("")
+		$(subject).val("")
+		$(message).val("")
+	}
+}
